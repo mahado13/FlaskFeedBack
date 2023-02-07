@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
 </head>
 <body>
+  <nav class="navbar navbar-light bg-dark justify-content-between ">
+  {%block h1%} {%endblock%}
+    <div class="container">
+      <a href="/" class="navbar-brand text-light"></a>
+      <ul class="nav navbar-nav flex-row float-right">
+        <li class="nav-item">
+          <a class="nav-link pr-3 text-light" href="">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pr-3 text-light" href="">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 {% block content %}
 
 {% endblock %}
