@@ -1,8 +1,8 @@
 {% extends 'base.html'  %}
 {%block h1%} Register{%endblock%}
 {%block content%} 
-<h1 class="display 1 justify-content-center"> Login</h1>
-<p class="lead"> Login Below. If you don't have an account? Register here: <a href="/register">click</a></p>
+<h1 class="display 1 justify-content-center"> Feedback</h1>
+<p class="lead"> Enter you feedback below!</p>
 <div class="container">
     <form>
         {{ form.hidden_tag() }}
@@ -10,10 +10,12 @@
         {% for field in form 
             if field.widget.input_type != 'hidden' %}
         
-        <p>
+        <div class="form-group">
         {{field.label}}
         {{field (class="form-control")}}
+        </div>
 
+        <p>
         {% for error in field.errors %}
         <span class="form-text text-danger">{{error}}</span>
         {% endfor %}
@@ -21,7 +23,7 @@
         </p>
         {% endfor %}
 
-    <button type="submit" class="btn btn-outline-success" formaction="/login" formmethod="POST">Register</button>
+    <button type="submit" class="btn btn-outline-success" formaction="/users/{{user.username}}/feedback/add" formmethod="POST">Add!</button>
 
     </form>
 </div>

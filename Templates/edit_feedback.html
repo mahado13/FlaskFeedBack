@@ -1,8 +1,8 @@
 {% extends 'base.html'  %}
 {%block h1%} Register{%endblock%}
 {%block content%} 
-<h1 class="display 1 justify-content-center"> Login</h1>
-<p class="lead"> Login Below. If you don't have an account? Register here: <a href="/register">click</a></p>
+<h1 class="display 1 justify-content-center"> Edit Feedback</h1>
+<p class="lead"> Edit your feedback below!</p>
 <div class="container">
     <form>
         {{ form.hidden_tag() }}
@@ -21,7 +21,7 @@
         </p>
         {% endfor %}
 
-    <button type="submit" class="btn btn-outline-success" formaction="/login" formmethod="POST">Register</button>
+    <button type="submit" class="btn btn-outline-success" formaction="/feedback/{{feedback.id}}/edit" formmethod="POST">Edit!</button>
 
     </form>
 </div>
